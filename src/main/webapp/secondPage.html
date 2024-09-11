@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Second Page</title>
+</head>
+<body>
+<p id="idDisplay"></p>
+<p id="pwDisplay"></p>
+
+<script type="text/javascript">
+window.onload = function() {
+    // get방식으로 url에서 값 받아오기
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    const pw = urlParams.get('pw');
+
+    // p태그에 id, pw 표시 없다면 N/A값 표시(바로 secondPage를 열었을 때)
+    document.getElementById('idDisplay').textContent = 'ID: ' + (id || 'N/A');
+    document.getElementById('pwDisplay').textContent = 'PW: ' + (pw || 'N/A');
+};
+</script>
+</body>
+</html>

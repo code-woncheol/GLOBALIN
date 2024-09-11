@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>First Page</title>
+</head>
+<body>
+<form id="myForm" action="secondPage.html" method="GET">
+<!-- secondPage로 값을 get방식으로 전달 -->
+    <label>ID: </label><input type="text" id="id" name="id" tabindex="1" required>
+    <!-- tabindex 순서와 필수요구 -->
+    <label>PW: </label><input type="password" id="pw" name="pw" tabindex="2" required>
+    <input type="submit">
+</form>
+
+<script type="text/javascript">
+window.onload = function() {
+    // Set focus to the ID input field when the page loads
+    document.getElementById('id').focus();
+    /* id칸에 커서가 가도록 */
+};
+</script>
+</body>
+</html>

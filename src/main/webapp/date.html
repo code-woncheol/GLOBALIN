@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Datepicker - Custom Functionality</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+  <style>
+    /* Custom CSS for the datepicker */
+    .ui-datepicker {
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+      width: 320px;
+    }
+    
+    .ui-datepicker-header {
+      background-color: #f0f0f0;
+      border: 1px solid #ddd;
+    }
+    
+    .ui-datepicker-title {
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .ui-datepicker-prev, .ui-datepicker-next {
+      font-size: 16px;
+      color: #007bff;
+    }
+    
+    .ui-datepicker-calendar {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    .ui-datepicker-calendar th {
+      background-color: #f7f7f7;
+      color: #333;
+      padding: 8px;
+    }
+    
+    .ui-datepicker-calendar td {
+      text-align: center;
+      padding: 6px;
+      border: 1px solid #ddd;
+      cursor: pointer;
+    }
+    
+    .ui-datepicker-calendar td.ui-datepicker-today a {
+      background-color: #007bff;
+      color: white;
+      border-radius: 50%;
+    }
+    
+    .ui-datepicker-calendar td a {
+      text-decoration: none;
+      color: #333;
+    }
+    
+    .ui-datepicker-calendar td a:hover {
+      background-color: #f0f0f0;
+    }
+    
+    .ui-datepicker-buttonpane {
+      text-align: right;
+    }
+    
+    .ui-datepicker-close {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+  
+  <script>
+  $(function() {
+    // 한자로 로케일 설정
+    // 한자로 로케일 설정
+$.datepicker.regional['ja'] = {
+  closeText: '閉じる', // 닫기 버튼의 텍스트
+  prevText: '前', // 이전 달 버튼의 텍스트
+  nextText: '次', // 다음 달 버튼의 텍스트
+  currentText: '今日', // 오늘 날짜 버튼의 텍스트
+  monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'], // 월 이름의 전체 한자
+  monthNamesShort: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'], // 월 이름의 짧은 한자
+  dayNames: ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'], // 요일의 전체 한자 이름
+  dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'], // 요일의 짧은 한자 이름
+  dayNamesMin: ['日', '月', '火', '水', '木', '金', '土'], // 요일의 최소 한자 이름
+  weekHeader: '週', // 주 단위 헤더의 텍스트
+  dateFormat: 'yy年mm月dd日', // 날짜 포맷 (연도, 월, 일을 한자로 표시)
+  firstDay: 0, // 한 주의 시작 요일 (0은 일요일)
+  isRTL: false, // 오른쪽에서 왼쪽으로 텍스트 방향 여부 (false는 왼쪽에서 오른쪽)
+  showMonthAfterYear: false, // 연도 뒤에 월 표시 여부 (false는 연도가 먼저, 월이 뒤에)
+  yearSuffix: '' // 연도 뒤에 붙는 접미사
+};
+
+
+    // 한자 로케일을 기본으로 설정
+    $.datepicker.setDefaults($.datepicker.regional['ja']);
+
+    // Datepicker 초기화
+    $("#datepicker").datepicker();
+  });
+  </script>
+</head>
+<body>
+ 
+<p>Date: <input type="text" id="datepicker"></p>
+ 
+</body>
+</html>
